@@ -23,7 +23,7 @@ export default function App() {
     // Check for a winner or a draw
     const winner = calculateWinner(newBoard);
     if (winner) {
-      Alert.alert("Game Over", `Player ${winner} wins!`, [
+      Alert.alert("Game Over", `Player ${winner} Wins!`, [
         { text: "OK", onPress: resetGame },
       ]);
     } else if (newBoard.every((cell) => cell)) {
@@ -86,7 +86,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.status}>Player {isXNext ? "X" : "O"}'s turn</Text>
+      <Text style={styles.status}>Player {isXNext ? "X" : "O"}'s Turn</Text>
       <View style={styles.board}>
         <View style={styles.row}>
           {renderSquare(0)}
@@ -117,10 +117,14 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: "#FFF8E3",
   },
   status: {
-    fontSize: 20,
+    fontSize: 25,
+    fontWeight:"bold",
+    paddingBottom: 10,
     marginBottom: 10,
+    color: "black",
   },
   board: {
     flexDirection: "column",
@@ -129,9 +133,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   square: {
-    width: 80,
-    height: 80,
-    borderWidth: 1,
+    width: 90,
+    height: 90,
+    borderWidth: 2,
     borderColor: "black",
     justifyContent: "center",
     alignItems: "center",
@@ -140,13 +144,14 @@ const styles = StyleSheet.create({
     fontSize: 24,
   },
   resetButton: {
-    marginTop: 20,
+    marginTop: 25,
     padding: 10,
-    backgroundColor: "blue",
+    backgroundColor: "#FE7A36",
     borderRadius: 5,
   },
   resetButtonText: {
-    color: "white",
+    color: "black",
     fontSize: 18,
+    fontWeight:'bold'
   },
 });
